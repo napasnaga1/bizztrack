@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Form Pemantauan Stok</title>
+    <link rel="stylesheet" href="pemantauan_stock.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
+    </style>
 </head>
 <body>
-    <h2>Form Pemantauan Stok</h2>
-    <form action="pemantauan_produk.p.php" method="post">
+    <div class="main">
+        <div class="Header">
+        <span><i>Pencatatan Stok Produk</i></span>
+        <button class="btn"><i class="fa fa-home"></i></button>
+        </div>
+        <form class="form" action="pemantauan_produk.p.php" method="post">
         <label for="tanggal">Tanggal:</label>
         <input type="date" id="tanggal" name="tanggal" required><br><br>
         
-        <label for="idstok">Nama Stok:</label>
+        <label for="idstok">Nama Barang:</label>
         <select id="idstok" name="idstok" required>
             <?php
            
@@ -43,5 +52,8 @@
         
         <input type="submit" value="Submit">
     </form>
+    </div>
+    
+    
 </body>
 </html>
