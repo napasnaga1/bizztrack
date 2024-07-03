@@ -20,16 +20,17 @@
         </div>
         <div class="login">
             <form action="login.php" method="post">
-            <label for="">Username</label><br>
-            <input type="text" name="username" required><br>
-            <label for="">Password</label><br>
-            <input type="password" name="password" required>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br><br>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br><br>
+               
+                <input  type="submit" value="Login">
+               
+                
             </form>
-            <a href="dashboard_Pemilik.html">
-                <button type="submit" name="login">
-                    submit
-                </button>
-            </a>
+            
 
         </div>
     </div>
