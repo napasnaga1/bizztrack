@@ -1,13 +1,32 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Pie Chart Menu Populer</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="piechart.css">
 </head>
 <body>
-    <h2>Pie Chart Menu Populer</h2>
-    <canvas id="pieChart"></canvas>
+    <div class="header">
+        <h2>Pie Chart Menu Populer</h2>
+    </div>
+    <div class="container">
+        <div class="left-column">
+            <div class="chart-container">
+                <canvas id="pieChart"></canvas>
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="isinya">
+                </div>
+                <div class="popular-item">
+                    <!-- Isi data item populer -->
+                </div>
+            </div>
+        </div>
+    </div>
     
     <script>
         // Ambil data dari PHP
@@ -48,6 +67,7 @@
                     },
                     options: {
                         responsive: true,
+                        aspectRatio: 1,
                         plugins: {
                             legend: {
                                 position: 'top',
