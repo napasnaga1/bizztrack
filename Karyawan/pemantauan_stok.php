@@ -17,8 +17,7 @@
         </div>
         <form class="form" action="pemantauan_produk.p.php" method="post">
         <label for="tanggal">Tanggal:</label>
-        <input type="date" id="tanggal" name="tanggal" required><br><br>
-        
+        <input type="date" id="tanggal" name="tanggal" required>
         <label for="idstok">Nama Barang:</label>
         <select id="idstok" name="idstok" required>
             <?php
