@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+
+* {
+  text-decoration: none;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: 100vh;
+  display: flex;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #00008b, #000000);
+}
+
+.container {
+  width: 100%;
+  display: flex;
+}
+
+.kiri {
+  width: 20%;
+  background: linear-gradient(to bottom, #00008b, #000000);
+  color: #fffcfc;
+  padding: 10px;
+}
+
+.kiri h3 {
+  margin: 0;
+  padding: 10px 0;
+}
+
+.kanan {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fffcfc;
+}
+
+.atas {
+  height: 8%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #113065;
+}
+
+.edit-button {
+  padding: 10px 20px;
+  background-color: #113065;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* .edit-button {
+    padding: 10px 20px;
+    background-color: #fdfdfd;
+    color: #113065;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}*/
+
+.edit-button:hover {
+  background-color: #030347;
+}
+
+.menu-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  border-bottom: 1px solid #113065;
+  background-color: #f9f9f9;
+}
+
+.menu-item {
+  padding: 10px 20px;
+  background: linear-gradient(to bottom, #00008b, #000000);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  flex: 1;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.menu-item:hover {
+  background-color: #040420;
+}
+
+.dashboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+  overflow-y: auto;
+  background-color: #ffffff;
+  flex: 1;
+}
+
+.card {
+  width: 45%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+}
+
+canvas {
+  width: 100% !important;
+  height: 400px !important;
+}
+
+.menu-item h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.menu-item p {
+  margin: 5px 0 0 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal h3 {
+  margin-top: 0;
+}
+
+.modal label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.modal input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal button {
+  padding: 10px 20px;
+  background-color: #113065;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal button:hover {
+  background-color: #030347;
+}
+
+.form-wrap {
+  width: 100%;
+  display: flex;
+  margin: auto;
+}
+.button-link {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 120px;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  padding: 10px;
+  background-color: white;
+  border-radius: 6px;
+}

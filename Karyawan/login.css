@@ -1,0 +1,62 @@
+body{
+font-family: 'Poppins';
+display: flex;
+width: 100%;
+justify-content: center;
+align-items: center;
+height: 780px;
+background: linear-gradient(to bottom right,#00013c 40%,#120f66 70%,#0f2a58 90%);
+}
+
+.main{
+    width: 1024px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20rem;
+
+    
+}
+
+
+.teks{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin-right: 20px;
+}
+
+.teks a{
+    font-size:26px ;
+    
+}
+
+span i {
+    font-weight: bold; /* Menambahkan properti font-weight */
+    font-size: 50px;
+}
+
+
+.login{
+    color: white;
+    text-align: center;
+}
+.login input{
+    padding: 10px;
+    width: 200px;
+    border-radius: 6px;
+}
+.login button{
+    width: 140px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    background-color: #0f1056;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    border-color: white;
+}

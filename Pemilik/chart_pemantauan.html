@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafik Pemantauan Stok Produk UMKM F&B</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="pemantauan.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="header">
+        Pemantauan Stok Produk
+        <a href="dashboard_Pemilik.html" class="btn"><i class="fa fa-home"></i></a>
+    </div>
+    <div class="chart-container">
+        <canvas id="ChartPemantauan"></canvas>
+    </div>
+
+    <script>
+        fetch('pemantauan_data.php')
+            .then(response => response.json())
+            .then(data => {
+                const labels = data.map(item => item.NamaBarang);
+                const values = data.map(item => item.StokBarang);
+
+                const ctx = document.getElementById('ChartPemantauan').getContext('2d');
+                const chartData = {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Stok',
+                        data: values,
+                        backgroundColor: 'rgba(0, 0, 255, 0.5)',
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1
+                    }]
+                };
+                const stockChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: chartData,
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Stok'
+                                }
+                            },
+                            x: {
+                                title: {
+                                    display: true,
+                                    text: 'Produk'
+                                }
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>
+</html>
