@@ -60,3 +60,15 @@ span i {
     font-size: 20px;
     border-color: white;
 }
+.login .submit{
+    width: 140px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    background-color: #0f1056;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    border-color: white;
+}
