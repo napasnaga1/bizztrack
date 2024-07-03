@@ -21,7 +21,7 @@
         fetch('pemantauan_data.php')
             .then(response => response.json())
             .then(data => {
-                const labels = data.map(item => item.NamaBarang);
+                const labels = data.map(item => `${item.NamaBarang} (${item.NamaToko})`);
                 const values = data.map(item => item.StokBarang);
 
                 const ctx = document.getElementById('ChartPemantauan').getContext('2d');
@@ -52,7 +52,7 @@
                             x: {
                                 title: {
                                     display: true,
-                                    text: 'Produk'
+                                    text: 'Produk (Toko)'
                                 }
                             }
                         }
