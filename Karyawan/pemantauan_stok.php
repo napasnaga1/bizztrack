@@ -50,6 +50,7 @@
         <label for="stok">Jumlah Stok:</label>
         <input type="number" id="stok" name="stok" required><br><br>
         
+        
         <input type="submit" value="Submit">
     </form>
     </div>

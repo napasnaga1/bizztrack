@@ -16,7 +16,7 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $_SESSION['id_karyawan'] = $row['idkaryawan'];
     // Redirect ke halaman laporan keuangan
-    header("Location: menu_populer.php");
+    header("Location: dashboard_karyawan.php");
     exit();
 } else {
     // Jika data tidak ditemukan, beri pesan error atau redirect ke halaman login kembali

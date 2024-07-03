@@ -2,36 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
-    <title>Document</title>
+    <title>Form Login</title>
     <link rel="stylesheet" type="text/css" href="login.css">
     <style>
         @import url('https://fonts.googleapis.com/css?family=Poppins:400,700,900');
     </style>
+</head>
 <body>
     <div class="main">
         <div class="teks">
             <span><i>Login Page</i></span>
-            <span><i>Pemilik</i></span>
+            <span><i>Karyawan</i></span>
             <a><i>Start your business</i></a>
             <a><i>now with us</i></a>
-        
         </div>
         <div class="login">
             <form action="login.php" method="post">
-            <label for="">Username</label><br>
-            <input type="text" name="username" required><br>
-            <label for="">Password</label><br>
-            <input type="password" name="password" required>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br><br>
+                
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br><br>
+               
+                <input  type="submit" value="Login">
+               
+                
             </form>
-            <a href="dashboard_Pemilik.html">
-                <button type="submit" name="login">
-                    submit
-                </button>
-            </a>
-
+            
         </div>
-    </div>
 </body>
 </html>

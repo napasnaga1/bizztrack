@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
 $username = "root";
-$password = ""; // Ganti dengan password yang sesuai, atau kosong jika tidak ada password
+$password = "root"; // Ganti dengan password yang sesuai, atau kosong jika tidak ada password
 $dbname = "bizztrackk";
 
 // Membuat koneksi
