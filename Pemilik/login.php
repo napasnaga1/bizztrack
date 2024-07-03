@@ -14,9 +14,9 @@ $result = $koneksi->query($sql);
 if ($result->num_rows > 0) {
     // Jika data ditemukan, set session untuk ID karyawan
     $row = $result->fetch_assoc();
-    $_SESSION['id_akunpemilik'] = $row['idakunpemilik'];
+    $_SESSION['id_pemilik'] = $row['idpemilik'];
     // Redirect ke halaman laporan keuangan
-    header("Location: dashboard_pemilik.html");
+    header("Location: home.php");
     exit();
 } else {
     // Jika data tidak ditemukan, beri pesan error atau redirect ke halaman login kembali
