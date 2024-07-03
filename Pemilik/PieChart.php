@@ -1,3 +1,51 @@
+<?php
+require 'koneksi.php'; // Ubah sesuai dengan lokasi file koneksi.php Anda
+require '../vendor/autoload.php'; // Ubah sesuai dengan lokasi file autoload.php dari library Groq
+
+use LucianoTonet\GroqPHP\Groq;
+
+$groq = new Groq('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');
+
+// SQL query to get the popular menu items for the current month
+$sql = "SELECT m.nama_menu AS NamaMenu, SUM(mp.jumlah_pesanan) AS TotalTerjual 
+        FROM menupopuler mp
+        JOIN menu m ON mp.menu_id = m.menu_id
+        WHERE mp.bulan = 'Juli'
+        GROUP BY m.nama_menu
+        ORDER BY TotalTerjual DESC";
+
+$result = $koneksi->query($sql);
+
+$data = array();
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $data[] = array(
+            'NamaMenu' => $row['NamaMenu'],
+            'TotalTerjual' => $row['TotalTerjual']
+        );
+    }
+}
+
+// Pass the SQL query result to Groq
+$chatCompletion = $groq->chat()->completions()->create([
+    'model'    => 'llama3-8b-8192',
+    'messages' => [
+        [
+            'role'    => 'system',
+            'content' => 'saya adalah sebuah perusahaan yang fokus di dalam bidang bisnis. saya ingin meningkatkan kemajuan bisnis umkm yang ada diindonesia, dengan sistem yang saya bikin yang dapat memudahkan pemilik umkm dengan mudah mengelola bisnis mereka. Tolong jawab dengan menggunakan bahasa indonesia'
+        ],
+        [
+            'role'    => 'user',
+            'content' => 'identifikasikan nama menu populer bulan ini berdasarkan tabel ' . json_encode($data) . ' dan saran ide penjualan bulan depan'
+        ],
+    ]
+]);
+
+// Get the completion response
+$response = $chatCompletion->json();
+echo $response;
+?>
+
 
 
 <!DOCTYPE html>
@@ -22,6 +70,7 @@
             <div class="isinya">
                 </div>
                 <div class="popular-item">
+                <?php echo $chatCompletion['choices'][0]['message']['content']; ?>
                     <!-- Isi data item populer -->
                 </div>
             </div>

@@ -21,7 +21,7 @@
     $sql = "
         SELECT 
             laporan_keuangan.tanggal AS tanggal,
-            keuangan.pendapatan AS pendapatan
+            keuangan.lababersih AS lababersih
         FROM 
             laporan_keuangan
         INNER JOIN 
@@ -34,12 +34,12 @@
     $result = $stmt->get_result();
 
     $tanggal = [];
-    $pendapatan = [];
+    $lababersih = [];
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             $tanggal[] = $row['tanggal'];
-            $pendapatan[] = (int)$row['pendapatan'];
+            $lababersih[] = (int)$row['lababersih'];
         }
     } else {
         echo "0 hasil";
@@ -56,8 +56,8 @@
             data: {
                 labels: <?php echo json_encode($tanggal); ?>,
                 datasets: [{
-                    label: 'Pendapatan',
-                    data: <?php echo json_encode($pendapatan); ?>,
+                    label: 'Laba Bersih',
+                    data: <?php echo json_encode($lababersih); ?>,
                     backgroundColor: 'rgba(60,141,188,0.9)',
                     borderColor: 'rgba(60,141,188,0.8)',
                     fill: false,
@@ -83,7 +83,7 @@
                         display: true,
                         title: {
                             display: true,
-                            text: 'Pendapatan'
+                            text: 'Laba Bersih'
                         }
                     }
                 }
