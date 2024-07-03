@@ -1,19 +1,24 @@
 <?php
-include "koneksi.php";
+include 'koneksi.php';
 
-$sql = "SELECT NamaBarang, StokBarang FROM pemantauanstokproduk";
+$sql = "SELECT namastok.namastok AS NamaBarang, pemantauan_stok.stok AS StokBarang, namatoko.namatoko AS NamaToko 
+        FROM pemantauan_stok
+        JOIN namastok ON pemantauan_stok.idstok = namastok.idstok
+        JOIN namatoko ON namastok.idtoko = namatoko.idtoko";
 $result = $koneksi->query($sql);
 
 $data = array();
-
 if ($result->num_rows > 0) {
-    // Ambil data
     while($row = $result->fetch_assoc()) {
-        $data[] = $row;
+        $data[] = array(
+            'NamaBarang' => $row['NamaBarang'],
+            'StokBarang' => $row['StokBarang'],
+            'NamaToko' => $row['NamaToko']
+        );
     }
 }
 
-$koneksi->close();
-
 echo json_encode($data);
+
+$koneksi->close();
 ?>
